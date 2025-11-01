@@ -1,54 +1,70 @@
-# Binaries and build artifacts
-/bin/
+# Environment variables (NEVER commit this!)
+.env
+.env.local
+.env.production
+
+# Binaries
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-*.test
-*.out
-*.a
 
-# Go workspace files
+# Test binaries
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
 go.work
-go.work.sum
 
 # Dependency directories
-/vendor/
-*.modcache
-
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-*.bak
-
-# Environment and config files
-.env
-.env.*
-*.local
-config.yaml
-config.json
-
-# IDE and editor settings
-.vscode/
-.idea/
-*.iml
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Test coverage reports
-coverage.out
+vendor/
 
 # Build output
-/dist/
+/bin
+/tmp
+/dist
 build/
-cmd/main
 
-# MongoDB dump files
-dump/
-*.bson
-*.metadata.json
+# IDE - VSCode
+.vscode/
+*.code-workspace
+
+# IDE - GoLand / IntelliJ
+.idea/
+*.iml
+*.iws
+
+# IDE - Vim
+*.swp
+*.swo
+*~
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Database files (if using SQLite)
+*.db
+*.sqlite
+*.sqlite3
+
+# Air (Go live reload tool) temp files
+tmp/
+
+# Test coverage
+coverage.txt
+coverage.html
+*.coverprofile
