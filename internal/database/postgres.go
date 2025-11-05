@@ -35,7 +35,8 @@ func Connect() error {
 		DB_HOST, DB_PORT, DB_USER, DB_PASSWORD, DB_NAME, DB_SSLMODE)
 
 	// Open database connection
-	DB, err := sql.Open("postgres", DB_URL)
+	var err error
+	DB, err = sql.Open("postgres", DB_URL)
 	if err != nil {
 		return fmt.Errorf("error opening database: %w", err)
 	}
