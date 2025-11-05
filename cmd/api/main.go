@@ -35,13 +35,16 @@ func main() {
 	{
 		auth.POST("/register", handlers.Register)
 		auth.POST("/login", handlers.Login)
-
+		auth.POST("/forgot-password", handlers.ForgotPassword)
+		auth.POST("/reset-password", handlers.ResetPassword)
 	}
 
 	api := router.Group("/api")
 	api.Use(middleware.RequireAuth())
 	{
 		api.GET("/me", handlers.GetMe)
+		api.POST("/logout", handlers.Logout)
+		api.POST("/update-password", handlers.ChangePassword)
 
 	}
 
