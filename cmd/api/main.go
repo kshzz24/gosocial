@@ -38,13 +38,21 @@ func main() {
 		auth.POST("/forgot-password", handlers.ForgotPassword)
 		auth.POST("/reset-password", handlers.ResetPassword)
 	}
-
+	subredditRoutes := router.Group("/api/subreddits")
+	{
+		subredditRoutes.GET("/:name", handlers.GetSubreddit)
+		subredditRoutes.GET("/", handlers.ListSubreddits)
+	}
 	api := router.Group("/api")
 	api.Use(middleware.RequireAuth())
 	{
 		api.GET("/me", handlers.GetMe)
 		api.POST("/logout", handlers.Logout)
 		api.POST("/update-password", handlers.ChangePassword)
+		api.POST("/subreddits", handlers.CreateSubreddit)
+		api.PUT("/subreddits/:id", handlers.UpdateSubreddit)
+		api.DELETE("/subreddits/:id", handlers.DeleteSubreddit)
+
 
 	}
 
