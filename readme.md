@@ -93,12 +93,12 @@ Server starts at `http://localhost:8080` 🚀
 ## 📡 API Endpoints
 
 ### Auth (Public)
-| Method | Endpoint | Description |
+| Method |        Endpoint        | Description |
 |--------|----------|-------------|
-| POST | `/auth/register` | Create account |
-| POST | `/auth/login` | Login user |
-| POST | `/auth/forgot-password` | Request reset |
-| POST | `/auth/reset-password` | Reset password |
+| POST |      `/auth/register`    | Create account |
+| POST |      `/auth/login`       | Login user     |
+| POST | `/auth/forgot-password`  | Request reset |
+| POST | `/auth/reset-password`   | Reset password |
 
 ### Auth (Protected)
 | Method | Endpoint | Description |
@@ -154,7 +154,7 @@ GET /api/subreddits?page=2&per_page=15
 
 ## 📊 Current Stats
 
-- **Endpoints:** 12 (7 auth + 5 subreddit)
+- **Endpoints:** 12 (7 auth + 5 subreddits)
 - **Tables:** 2 (users, subreddits)
 - **Features:** JWT auth, email reset, JSONB, pagination, ownership checks
 
